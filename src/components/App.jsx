@@ -5,13 +5,18 @@ import Board from "./Board";
 
 function App() {
 
+function rollDice (){
+  return Math.floor(Math.random() * 4) + 1;
+  
+}
+console.log(rollDice);
   return (
     <>
     <Header/>
     <main className="page">
     <Board/>
         <section>
-        <button className="dice">Lanzar Dado</button>
+        <button onClick={rollDice} className="dice">Lanzar Dado</button>
         <div className="game-status">En curso</div>
       </section>
 
