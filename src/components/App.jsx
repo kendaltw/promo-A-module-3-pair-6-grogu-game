@@ -1,46 +1,54 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "../scss/App.scss";
 import Header from "./Header";
 import Board from "./Board";
+import Dice from "./Dice";
+
+const [position, setPosition] = useState("");
+
+const [goodsRemaining, setGoodsRemaining] = useState("");
+
+const [diceResult, setDiceResult] = useState("");
+
+const [gameStatus, setGameStatus] = useState("");
 
 function App() {
+  function rollDice() {
+    console.log("rollDice");
+    return Math.floor(Math.random() * 4) + 1;
+  }
 
-function rollDice (){
-  return Math.floor(Math.random() * 4) + 1;
-  
-}
-console.log(rollDice);
   return (
     <>
-    <Header/>
-    <main className="page">
-    <Board/>
+      <Header />
+      <main className="page">
+        <Board />
         <section>
-        <button onClick={rollDice} className="dice">Lanzar Dado</button>
-        <div className="game-status">En curso</div>
-      </section>
+          <Dice rollDiceClick={rollDice} patata="cualquiercosa" />
+          <div className="game-status">En curso</div>
+        </section>
 
-      <section className="goods-container">
-        <div className="goods-item">🍪</div>
-        <div className="goods-item">🍪</div>
-        <div className="goods-item">🍪</div>
-      </section>
-      <section className="goods-container">
-        <div className="goods-item">🥚</div>
-        <div className="goods-item">🥚</div>
-        <div className="goods-item">🥚</div>
-      </section>
-      <section className="goods-container">
-        <div className="goods-item">🐸</div>
-        <div className="goods-item">🐸</div>
-        <div className="goods-item">🐸</div>
-      </section>
-      <section>
-        <button className="restart-button">Reiniciar Juego</button>
-      </section>
-    </main>
+        <section className="goods-container">
+          <div className="goods-item">🍪</div>
+          <div className="goods-item">🍪</div>
+          <div className="goods-item">🍪</div>
+        </section>
+        <section className="goods-container">
+          <div className="goods-item">🥚</div>
+          <div className="goods-item">🥚</div>
+          <div className="goods-item">🥚</div>
+        </section>
+        <section className="goods-container">
+          <div className="goods-item">🐸</div>
+          <div className="goods-item">🐸</div>
+          <div className="goods-item">🐸</div>
+        </section>
+        <section>
+          <button className="restart-button">Reiniciar Juego</button>
+        </section>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
