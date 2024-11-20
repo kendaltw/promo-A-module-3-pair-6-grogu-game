@@ -1,17 +1,20 @@
 import Grogu from "./Grogu";
 
 function Board () {
-    return(
-        <section className="board">
-        <div className="cell"><Grogu/></div>
-        <div className="cell"></div>
-        <div className="cell"></div>
-        <div className="cell"></div>
-        <div className="cell"></div>
-        <div className="cell"></div>
-        <div className="cell"></div>
-      </section>
-    )
+  const miArray = [1, 2, 3, 4, 5, 6, 7];
+  miArray.fill(null);
+  console.log(miArray);
+
+// renderCells = () => {
+//   return miArray.map((cell, index) =>{
+//   return ( <section className="board">
+//           <div key= {miArray.index} className="cell"><Grogu/></div>
+//         </section>)
+
+//   }
+
+// } 
+
 
 }
 
