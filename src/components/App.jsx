@@ -3,16 +3,21 @@ import "../scss/App.scss";
 import Header from "./Header";
 import Board from "./Board";
 import Dice from "./Dice";
+import Form from "./Form";
 
-const [position, setPosition] = useState("");
+function App(props) {
+  const [name, setName] = useState({
+    name: "",
+  });
 
-const [goodsRemaining, setGoodsRemaining] = useState("");
+  const [position, setPosition] = useState("");
 
-const [diceResult, setDiceResult] = useState("");
+  const [goodsRemaining, setGoodsRemaining] = useState("");
 
-const [gameStatus, setGameStatus] = useState("");
+  const [diceResult, setDiceResult] = useState("");
 
-function App() {
+  const [gameStatus, setGameStatus] = useState("");
+
   function rollDice() {
     console.log("rollDice");
     return Math.floor(Math.random() * 4) + 1;
@@ -22,6 +27,7 @@ function App() {
     <>
       <Header />
       <main className="page">
+        <Form />
         <Board />
         <section>
           <Dice rollDiceClick={rollDice} patata="cualquiercosa" />
