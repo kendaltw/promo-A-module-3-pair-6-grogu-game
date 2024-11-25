@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../scss/App.scss";
 import Header from "./Header";
 import Board from "./Board";
@@ -12,6 +12,8 @@ function App(props) {
 
   const [position, setPosition] = useState("");
 
+  useEffect(() => {});
+
   const [goodsRemaining, setGoodsRemaining] = useState("");
 
   const [diceResult, setDiceResult] = useState("");
@@ -19,7 +21,7 @@ function App(props) {
   const [gameStatus, setGameStatus] = useState("");
 
   function rollDice() {
-    console.log("rollDice");
+    // console.log("rollDice");
     return Math.floor(Math.random() * 4) + 1;
   }
 

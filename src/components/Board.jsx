@@ -7,11 +7,17 @@ function Board() {
 
   return (
     <section className="board">
-      <div className="cell">
-        <Grogu />
-      </div>
+      {miArray.map((cell, index) => {
+        return <div key={index} className="cell"></div>;
+      })}
     </section>
   );
 }
 
 export default Board;
+
+/*
+Posición de Grogu
+Al cargar la página, Grogu esté en la primera celda
+
+*/
