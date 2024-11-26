@@ -4,6 +4,7 @@ import Header from "./Header";
 import Board from "./Board";
 import Dice from "./Dice";
 import Form from "./Form";
+import Footer from "./Footer";
 
 function App(props) {
   const [name, setName] = useState({
@@ -53,6 +54,7 @@ function App(props) {
           <button className="restart-button">Reiniciar Juego</button>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
