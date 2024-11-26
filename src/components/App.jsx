@@ -5,6 +5,9 @@ import Board from "./Board";
 import Dice from "./Dice";
 import Form from "./Form";
 import Footer from "./Footer";
+import { Routes, Route } from "react-router-dom";
+import Instructions from "./Instructions";
+import Options from "./Options";
 
 function App(props) {
   const [name, setName] = useState({
@@ -55,6 +58,11 @@ function App(props) {
         <section>
           <button className="restart-button">Reiniciar Juego</button>
         </section>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/instructions" element={<Instructions />} />
+          <Route path="/options" element={<Options />} />
+        </Routes>
       </main>
       <Footer />
     </>
